@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Player</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #videoPlayer {
+            position: relative;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        #youtubePlayer {
+            width: 720px;
+            height: 425px;
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        #prevButton {
+            left: -80px; /* Position to the left of the video */
+        }
+
+        #nextButton {
+            right: -80px; /* Position to the right of the video */
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    
+<h1>Just watching them won't help Follow them.</h1>
+
+<div id="videoPlayer">
+    <iframe id="youtubePlayer" src="" frameborder="0" allowfullscreen></iframe>
+    <button id="prevButton" class="button">Prev</button>
+    <button id="nextButton" class="button">Next</button>
+</div>
+
+<script>
+// Updated video array with full embed links including query parameters
+const videos = [
+    { url: 'https://www.youtube.com/embed/DzuZz9YShWM?si=AsTGOaVCsxisOgDU', title: 'Video 1 Title' },
+    { url: 'https://www.youtube.com/embed/BjFKH31NtfQ?si=C72qUaD6k5EKcYmH', title: 'Video 2 Title' },
+    { url: 'https://www.youtube.com/embed/H6zPSl6BpfU?si=vouGzVM3Cn_lv1GF', title: 'Video 3 Title' },
+    // Add more videos as needed
+];
+
+let currentIndex = 0;
+
+// Function to update the video player
+function updateVideo() {
+    const videoUrl = videos[currentIndex].url;
+    document.getElementById('youtubePlayer').src = videoUrl;
+}
+
+// Event listeners for buttons
+document.getElementById('prevButton').addEventListener('click', function() {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : videos.length - 1; // Loop to last if at start
+    updateVideo();
+});
+
+document.getElementById('nextButton').addEventListener('click', function() {
+    currentIndex = (currentIndex < videos.length - 1) ? currentIndex + 1 : 0; // Loop to start if at end
+    updateVideo();
+});
+
+// Set the default video on page load
+updateVideo();
+
+</script>
+
+</body>
+</html>

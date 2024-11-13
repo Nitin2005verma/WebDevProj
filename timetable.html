@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hub - Timetable</title>
+    <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+    <!-- Ribbon Navigation -->
+    <div class="ribbon">
+        <a href="timetable.html " >Exams Schedule</a>
+        <a href="exam_syllabus.html"target="_blank">Exam Syllabus</a>
+        <a href="reward.html"target="_blank">Reward</a>
+        <a href="profile.html"target="_blank">My Profile</a>
+        <a href="motivation.html"target="_blank">Need Motivation</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>My Exam Timetable</h1>
+
+        <!-- Button to add new exam -->
+        <button id="addExamBtn">Add Exam</button>
+
+        <!-- Exam Table -->
+        <table class="exam-table" id="examTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Subject</th>
+                    <th>Completed</th>
+                    <th>Action</th> <!-- Add an "Action" column for Delete buttons -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exam Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="timetable.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* General body styling */
+body {
+    background-color: #0ba5db; /* Blue background */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Ribbon navigation at the top */
+.ribbon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.ribbon a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.ribbon a:hover {
+    background-color: #333;
+}
+
+/* Content section */
+.content {
+    margin-top: 80px; /* Space below the ribbon */
+    text-align: center;
+}
+
+/* Heading Style */
+.content h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+.exam-table {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.exam-table th,
+.exam-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.exam-table th {
+    background-color: #333;
+    color: white;
+}
+
+.exam-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.exam-table tr:hover {
+    background-color: #e9e9e9;
+}
+
+/* Input fields styling */
+input[type="date"], input[type="time"] {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .exam-table {
+        width: 90%;
+    }
+}

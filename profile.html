@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Links</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0ba5db;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 150px);
+            gap: 20px;
+        }
+        .link-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 150px;
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s;
+        }
+        .link-box:hover {
+            transform: scale(1.05);
+        }
+        .icon {
+            width: 40px; /* Adjust icon width */
+            height: 40px; /* Adjust icon height */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="https://github.com/yourusername" class="link-box" target="_blank">
+            <img src="github-icon.png" alt="GitHub" class="icon"> <!-- Replace with your GitHub icon -->
+            GitHub
+        </a>
+        <a href="https://leetcode.com/" class="link-box" target="_blank">
+            <img src="leetcode-icon.png" alt="LeetCode" class="icon"> <!-- Replace with your LeetCode icon -->
+            LeetCode
+        </a>
+        <a href="https://www.geeksforgeeks.org/" class="link-box" target="_blank">
+            <img src="gfg.png" alt="LinkedIn" class="icon"> <!-- Replace with your LinkedIn icon -->
+            GeeksForGeeks
+        </a>
+        <a href="https://stackoverflow.com/users/youruserid" class="link-box" target="_blank">
+            <img src="tuf-icon.jpg" alt="Stack Overflow" class="icon"> <!-- Replace with your Stack Overflow icon -->
+            TakeUForward
+        </a>
+    </div>
+
+</body>
+</html>

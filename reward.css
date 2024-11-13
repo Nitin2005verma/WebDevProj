@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+}
+h1{
+    position: fixed;top: 10px;left: 350px;
+    font-size: 40px;
+    color: aliceblue;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;left: 300px;
+    
+}
+
+img {
+    width: 500px; /* Set your desired width */
+    height: auto; /* Keep aspect ratio */
+    margin: 0 20px;
+    border: 2px solid aliceblue
+}

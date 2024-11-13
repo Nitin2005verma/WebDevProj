@@ -1,0 +1,164 @@
+/* Ensure the body and html take up full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Make the whole page scrollable when content grows */
+#subjectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  overflow-y: auto; /* Allow scrolling when content overflows */
+  max-height: calc(100vh - 60px); /* Adjust the max height to fit within the viewport */
+}
+
+/* Add padding at the top to ensure content doesn't overlap header */
+#header {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Each subject block */
+.subject {
+  width: calc(50% - 20px);
+  max-width: 350px;
+  min-width: 280px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Subject title */
+.subject h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Subject name input */
+.subject-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Color picker for subject */
+.color-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.color-options input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Button styling */
+.btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+/* Topic list styling */
+.topic-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Topic styling with flexbox for alignment */
+.topic-item {
+  display: flex;  /* Flexbox layout for topics */
+  align-items: center;  /* Vertically align items */
+  justify-content: space-between; /* Space out the items */
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* Editable topic text */
+.editable-topic {
+  flex-grow: 1; /* Topic text takes available space */
+  padding: 5px;
+  margin-right: 10px; /* Space between text and delete button */
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Delete button for topic (trash can) */
+.delete-topic-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.delete-topic-btn:hover {
+  color: darkred;
+}
+
+/* On mobile, make subject blocks take up more width */
+@media screen and (max-width: 768px) {
+  .subject {
+      width: 100%; /* On smaller screens, take full width */
+      max-width: none; /* Remove max-width */
+  }
+
+  #subjectsContainer {
+      padding: 10px;
+  }
+
+  /* Smaller button font size on mobile */
+  .btn {
+      font-size: 12px;
+  }
+
+  /* Ensure topics are aligned properly on small screens */
+  .topic-item {
+      flex-direction: column; /* Stack the items vertically on small screens */
+      align-items: flex-start; /* Align them to the left */
+  }
+
+  .editable-topic {
+      margin-right: 0; /* Remove margin when stacked vertically */
+      margin-bottom: 5px; /* Add some space between text and delete button */
+  }
+
+  .delete-topic-btn {
+      margin-left: 0; /* Remove margin when stacked vertically */
+  }
+}
